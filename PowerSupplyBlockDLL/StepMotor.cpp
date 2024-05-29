@@ -44,4 +44,16 @@ extern "C" {
 		return true; //Движение остановлено
 			
 	}
+	bool StepMotor::is_fully_open() {
+		if (StepMotor::read_holding_register(514) == 1)
+			return true;
+		else
+			return false;
+	}
+	bool StepMotor::is_fully_closed() {
+		if (StepMotor::read_holding_register(515) == 1)
+			return true;
+		else
+			return false;
+	}
 }

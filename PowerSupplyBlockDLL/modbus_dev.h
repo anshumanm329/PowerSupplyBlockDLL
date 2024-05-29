@@ -1,6 +1,9 @@
 #pragma once
 #include "modbus.h"
 #include <iostream>
+#include <chrono>
+#include <thread>
+#include <functional>
 class modbus_dev
 {
 	private:

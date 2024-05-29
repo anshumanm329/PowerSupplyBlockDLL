@@ -34,6 +34,24 @@ extern "C" {
             return false; // Блок незапущен
     }
 
+    bool CPowerSupplyBlockDLL::powersupply_turn_on_with_timer(PowerSupply psu1, int t) 
+    {
+        
+        //Here it is assumed that the value of 't' is given by the user
+        // set the timer value
+        if (t>0) {
+            psu1.set_timer(t); //The timer is set
+        }
+        else
+            return false; // timer value can't be zero or negative (Give error message)
+        //Proceeding with a set timer
+        if (psu1.on_off_with_timer())
+            return true; // The operation worked as intended
+        else
+            return false; // Error: Turning on with timer failed!
+                          // Check for the reason it returned false and give appropriate error message
+    }
+
     bool CPowerSupplyBlockDLL::powersupply_set_setpoints(PowerSupply psu1, uint16_t current_set_point) {
         if (psu1.set_current(current_set_point))
             return true;
@@ -67,6 +85,20 @@ extern "C" {
     }
     bool CPowerSupplyBlockDLL::stepmotor_stop(StepMotor motor1){
         if (motor1.stop())
+            return true;
+        else
+            return false;
+    }
+    bool CPowerSupplyBlockDLL::stepmotor_is_fully_open(StepMotor motor1)
+    {
+        if (motor1.is_fully_open())
+            return true;
+        else
+            return false;
+    }
+    bool CPowerSupplyBlockDLL::stepmotor_is_fully_closed(StepMotor motor1)
+    {
+        if (motor1.is_fully_closed())
             return true;
         else
             return false;

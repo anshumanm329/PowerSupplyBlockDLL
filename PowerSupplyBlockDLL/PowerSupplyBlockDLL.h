@@ -25,12 +25,15 @@ public:
 	//Methods
 	bool powersupply_connect(PowerSupply psu1); // Creates a modbus instance of the power supply block
 	bool powersupply_turn_on(PowerSupply psu1); // Writes to the necessary registers to make the PSU ready for operation
+	bool powersupply_turn_on_with_timer(PowerSupply psu1, int t);// Turn on using time limit provided by user
 	bool powersupply_set_setpoints(PowerSupply psu1, uint16_t current_set_point); //To write the current and voltage setpoints to necessary registers
 	bool powersupply_get_values(PowerSupply psu1); //To get the current readback
 	bool stepmotor_connect(StepMotor motor1); //Connect to the stepmotor through relay
 	bool stepmotor_forward(StepMotor motor1); //Step motor forward motion
 	bool stepmotor_reverse(StepMotor motor1); //Step motor reverse motion
 	bool stepmotor_stop(StepMotor motor1); //Stop the motion
+	bool stepmotor_is_fully_open(StepMotor motor1); //Check for fully open 
+	bool stepmotor_is_fully_closed(StepMotor motor1); //Check for fully closed
 };
 
 extern POWERSUPPLYBLOCKDLL_API int nPowerSupplyBlockDLL;
