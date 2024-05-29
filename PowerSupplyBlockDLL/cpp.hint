@@ -1,0 +1,2 @@
+﻿#define POWERSUPPLYBLOCKDLL_API __declspec(dllexport)
+#define POWERSUPPLYBLOCKDLL_API __declspec(dllimport)
