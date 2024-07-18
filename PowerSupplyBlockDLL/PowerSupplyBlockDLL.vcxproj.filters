@@ -94,7 +94,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="..\..\StepMotorDllProject\StepMotorDllProject\modbus.rc">
+    <ResourceCompile Include="modbus.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
   </ItemGroup>

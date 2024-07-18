@@ -193,7 +193,7 @@
     <ClCompile Include="StepMotor.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="..\..\StepMotorDllProject\StepMotorDllProject\modbus.rc" />
+    <ResourceCompile Include="modbus.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
